@@ -7,12 +7,35 @@
 //
 
 #import "BSAppDelegate.h"
+#import <Parse/Parse.h>
 
 @implementation BSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [Parse setApplicationId:@"pyvshzjKW4PjrGsnyzFigtWk9AQYtSO1FpQ1U2jX" clientKey:@"IcnTGAjaeK40bRQfGVDO6YtoQxywfoDRfxyD6RWK"];
+    
+    [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge];
+    
+//    既にオブジェクトが存在してないか確認後、登録
+    PFInstallation *installation = [PFInstallation currentInstallation];
+    [installation saveInBackground];
+    NSString *installationId = [installation installationId];
+    PFQuery *q = [PFQuery queryWithClassName:@"masuilab"];
+    [q whereKey:@"installationId" equalTo:installationId];
+    [q findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if(!error){
+            if([objects count] == 0){
+                PFObject *object = [PFObject objectWithClassName:@"masuilab"];
+                object[@"deviceType"] = @"ios";
+                object[@"installationId"] = installationId;
+                [object saveInBackground];
+            }
+        }
+    }];
+    
+    
     return YES;
 }
 							
@@ -41,6 +64,20 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)application:(UIApplication *)application
+didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    // Store the deviceToken in the current installation and save it to Parse.
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    [currentInstallation saveInBackground];
+}
+
+- (void)application:(UIApplication *)application
+didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    [PFPush handlePush:userInfo];
 }
 
 @end

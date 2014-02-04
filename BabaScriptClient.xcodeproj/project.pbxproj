@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46525DE3B9FA46F98E3244FC /* libPods-BabaScriptClientTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54861BFF23914427A20C574D /* libPods-BabaScriptClientTests.a */; };
+		9172B0F7CDFC407A8F106EFB /* libPods-BabaScriptClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C8D5CBA6CD04306A89648E2 /* libPods-BabaScriptClient.a */; };
 		E199632A189FDD530006E120 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1996329189FDD530006E120 /* Foundation.framework */; };
 		E199632C189FDD530006E120 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E199632B189FDD530006E120 /* CoreGraphics.framework */; };
 		E199632E189FDD530006E120 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E199632D189FDD530006E120 /* UIKit.framework */; };
@@ -35,6 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		54861BFF23914427A20C574D /* libPods-BabaScriptClientTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BabaScriptClientTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74B91FA5FFB344968C8D06DF /* Pods-BabaScriptClient.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabaScriptClient.xcconfig"; path = "Pods/Pods-BabaScriptClient.xcconfig"; sourceTree = "<group>"; };
+		78D8D39F51EE4D62881763EF /* Pods-BabaScriptClientTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabaScriptClientTests.xcconfig"; path = "Pods/Pods-BabaScriptClientTests.xcconfig"; sourceTree = "<group>"; };
+		7C8D5CBA6CD04306A89648E2 /* libPods-BabaScriptClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BabaScriptClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1996326189FDD530006E120 /* BabaScriptClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabaScriptClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1996329189FDD530006E120 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E199632B189FDD530006E120 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -55,6 +61,7 @@
 		E1996353189FDD530006E120 /* BabaScriptClientTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BabaScriptClientTests-Info.plist"; sourceTree = "<group>"; };
 		E1996355189FDD530006E120 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E1996357189FDD530006E120 /* BabaScriptClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BabaScriptClientTests.m; sourceTree = "<group>"; };
+		E199636118A00A660006E120 /* BabaScriptClient.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BabaScriptClient.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +72,7 @@
 				E199632C189FDD530006E120 /* CoreGraphics.framework in Frameworks */,
 				E199632E189FDD530006E120 /* UIKit.framework in Frameworks */,
 				E199632A189FDD530006E120 /* Foundation.framework in Frameworks */,
+				9172B0F7CDFC407A8F106EFB /* libPods-BabaScriptClient.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +83,7 @@
 				E199634C189FDD530006E120 /* XCTest.framework in Frameworks */,
 				E199634E189FDD530006E120 /* UIKit.framework in Frameworks */,
 				E199634D189FDD530006E120 /* Foundation.framework in Frameworks */,
+				46525DE3B9FA46F98E3244FC /* libPods-BabaScriptClientTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +97,8 @@
 				E1996351189FDD530006E120 /* BabaScriptClientTests */,
 				E1996328189FDD530006E120 /* Frameworks */,
 				E1996327189FDD530006E120 /* Products */,
+				74B91FA5FFB344968C8D06DF /* Pods-BabaScriptClient.xcconfig */,
+				78D8D39F51EE4D62881763EF /* Pods-BabaScriptClientTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +118,8 @@
 				E199632B189FDD530006E120 /* CoreGraphics.framework */,
 				E199632D189FDD530006E120 /* UIKit.framework */,
 				E199634B189FDD530006E120 /* XCTest.framework */,
+				7C8D5CBA6CD04306A89648E2 /* libPods-BabaScriptClient.a */,
+				54861BFF23914427A20C574D /* libPods-BabaScriptClientTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -114,6 +127,7 @@
 		E199632F189FDD530006E120 /* BabaScriptClient */ = {
 			isa = PBXGroup;
 			children = (
+				E199636118A00A660006E120 /* BabaScriptClient.entitlements */,
 				E1996338189FDD530006E120 /* BSAppDelegate.h */,
 				E1996339189FDD530006E120 /* BSAppDelegate.m */,
 				E199633B189FDD530006E120 /* Main_iPhone.storyboard */,
@@ -162,9 +176,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E199635B189FDD530006E120 /* Build configuration list for PBXNativeTarget "BabaScriptClient" */;
 			buildPhases = (
+				C866EF5D9305495FAE29D5B5 /* Check Pods Manifest.lock */,
 				E1996322189FDD530006E120 /* Sources */,
 				E1996323189FDD530006E120 /* Frameworks */,
 				E1996324189FDD530006E120 /* Resources */,
+				A1034853875D4ECC87B34951 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -179,9 +195,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E199635E189FDD530006E120 /* Build configuration list for PBXNativeTarget "BabaScriptClientTests" */;
 			buildPhases = (
+				C649CFB09AE449818F8C8693 /* Check Pods Manifest.lock */,
 				E1996346189FDD530006E120 /* Sources */,
 				E1996347189FDD530006E120 /* Frameworks */,
 				E1996348189FDD530006E120 /* Resources */,
+				029E6ED53A8747AAB379F742 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -203,6 +221,17 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = TakumiBaba;
 				TargetAttributes = {
+					E1996325189FDD530006E120 = {
+						DevelopmentTeam = Y335AE98H3;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+						};
+					};
 					E1996349189FDD530006E120 = {
 						TestTargetID = E1996325189FDD530006E120;
 					};
@@ -248,6 +277,69 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		029E6ED53A8747AAB379F742 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-BabaScriptClientTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1034853875D4ECC87B34951 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-BabaScriptClient-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C649CFB09AE449818F8C8693 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C866EF5D9305495FAE29D5B5 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E1996322189FDD530006E120 /* Sources */ = {
@@ -331,7 +423,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development IOS Push Services: org.babascript.ios.BabaScriptClient";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -371,7 +463,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development IOS Push Services: org.babascript.ios.BabaScriptClient";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -390,32 +482,41 @@
 		};
 		E199635C189FDD530006E120 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74B91FA5FFB344968C8D06DF /* Pods-BabaScriptClient.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: org.babascript.ios.BabaScriptClient";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BabaScriptClient/BabaScriptClient-Prefix.pch";
 				INFOPLIST_FILE = "BabaScriptClient/BabaScriptClient-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		E199635D189FDD530006E120 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74B91FA5FFB344968C8D06DF /* Pods-BabaScriptClient.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: org.babascript.ios.BabaScriptClient";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BabaScriptClient/BabaScriptClient-Prefix.pch";
 				INFOPLIST_FILE = "BabaScriptClient/BabaScriptClient-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
 		E199635F189FDD530006E120 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78D8D39F51EE4D62881763EF /* Pods-BabaScriptClientTests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BabaScriptClient.app/BabaScriptClient";
@@ -439,6 +540,7 @@
 		};
 		E1996360189FDD530006E120 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78D8D39F51EE4D62881763EF /* Pods-BabaScriptClientTests.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/BabaScriptClient.app/BabaScriptClient";
@@ -475,6 +577,7 @@
 				E199635D189FDD530006E120 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E199635E189FDD530006E120 /* Build configuration list for PBXNativeTarget "BabaScriptClientTests" */ = {
 			isa = XCConfigurationList;
@@ -483,6 +586,7 @@
 				E1996360189FDD530006E120 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
