@@ -9,7 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @interface BSAppDelegate : UIResponder <UIApplicationDelegate>
+{
+    BOOL isLogin;
+}
 
 @property (strong, nonatomic) UIWindow *window;
+
+- (BOOL) isLogin;
+- (void) login:(NSString *) userid password:(NSString *) password callback:(void (^)(NSDictionary *))callback;
+- (void) logout;
+- (void) signup:(NSString *) userid password:(NSString *) password;
 
 @end

@@ -3,10 +3,12 @@
 
 
 target "BabaScriptClient" do
-  pod 'Parse' , '~> 1.2.18'
+    pod 'AFNetworking', '~> 2.1.0'
+    pod 'LUKeychainAccess', '~> 1.2.0'
 end
 
 target "BabaScriptClientTests" do
-  pod 'Parse' , '~> 1.2.18'
+    pod 'AFNetworking', '~> 2.1.0'
+    pod 'LUKeychainAccess', '~> 1.2.0'
 end
 

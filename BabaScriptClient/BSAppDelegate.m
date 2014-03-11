@@ -7,35 +7,26 @@
 //
 
 #import "BSAppDelegate.h"
-#import <Parse/Parse.h>
+#import <AFNetworking/AFNetworking.h>
+#import <LUKeychainAccess/LUKeychainAccess.h>
 
 @implementation BSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [Parse setApplicationId:@"pyvshzjKW4PjrGsnyzFigtWk9AQYtSO1FpQ1U2jX" clientKey:@"IcnTGAjaeK40bRQfGVDO6YtoQxywfoDRfxyD6RWK"];
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert];
     
-    [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge];
-    
-//    既にオブジェクトが存在してないか確認後、登録
-    PFInstallation *installation = [PFInstallation currentInstallation];
-    [installation saveInBackground];
-    NSString *installationId = [installation installationId];
-    PFQuery *q = [PFQuery queryWithClassName:@"masuilab"];
-    [q whereKey:@"installationId" equalTo:installationId];
-    [q findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if(!error){
-            if([objects count] == 0){
-                PFObject *object = [PFObject objectWithClassName:@"masuilab"];
-                object[@"deviceType"] = @"ios";
-                object[@"installationId"] = installationId;
-                [object saveInBackground];
-            }
-        }
-    }];
-    
-    
+    LUKeychainAccess *access = [LUKeychainAccess standardKeychainAccess];
+    NSString *userid = [access stringForKey:@"id"];
+    NSString *password = [access stringForKey:@"password"];
+    if(![userid isEqualToString:@""] || ![password isEqualToString:@""]){
+        isLogin = NO;
+        return YES;
+    }else{
+        [self login:userid password:password callback:^(NSDictionary *data) {
+        }];
+    }
     return YES;
 }
 							
@@ -66,18 +57,83 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-- (void)application:(UIApplication *)application
-didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
-    // Store the deviceToken in the current installation and save it to Parse.
-    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
-    [currentInstallation setDeviceTokenFromData:deviceToken];
-    [currentInstallation saveInBackground];
+    NSString *devicetoken = [NSString stringWithFormat:@"%@", deviceToken];
+    NSLog(@"device token is %@", devicetoken);
+    NSUUID *uuid = [UIDevice currentDevice].identifierForVendor;
+    LUKeychainAccess *keychain = [LUKeychainAccess standardKeychainAccess];
+    [keychain setObject:devicetoken forKey:@"token"];
+    [keychain setObject:uuid.UUIDString forKey:@"uuid"];
+    
 }
 
-- (void)application:(UIApplication *)application
-didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    [PFPush handlePush:userInfo];
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+
+}
+
+-(void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
+{
+    NSDictionary *aps = [userInfo objectForKey:@"aps"];
+    NSString *message = [aps objectForKey:@"alert"];
+//    NSString *trimedMessage = [message stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+//    NSLog(@"message is %@", trimedMessage);
+    NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *error = nil;
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+    if(error != nil){
+        NSLog(@"error ? %@", error);
+    }
+    NSLog(@"%@", json);
+//    NSLog(@"%@", [[NSString alloc] initWithData:userInfo encoding:NSUTF8StringEncoding]);
+    
+}
+
+- (void) login:(NSString *) userid password:(NSString *) password callback:(void (^)(NSDictionary *))callback
+{
+    NSLog(@"id is %@, pass is %@", userid, password);
+    if(!isLogin){
+        LUKeychainAccess *keychain = [LUKeychainAccess standardKeychainAccess];
+        NSLog(@"%@", [keychain objectForKey:@"token"]);
+        NSDictionary *param = @{
+                                @"id": userid,
+                                @"pass": password,
+                                @"deviceId": [UIDevice currentDevice].identifierForVendor.UUIDString,
+                                @"deviceType": @"APNS_SANDBOX",
+                                @"token": [keychain objectForKey:@"token"]
+                                };
+        NSURL *apiURL = [[NSURL alloc] initWithString:kAPI];
+        AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:apiURL];
+        [manager POST:@"device/login" parameters:param success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSDictionary *data = responseObject;
+            isLogin = YES;
+            LUKeychainAccess *keychain = [LUKeychainAccess standardKeychainAccess];
+            [keychain setObject:userid forKey:@"userid"];
+            [keychain setObject:password forKey:@"password"];
+            callback(data);
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            isLogin = NO;
+            callback(@{@"error": error});
+        }];
+    }else{
+        isLogin = YES;
+        callback(@{@"status": @true});
+    }
+}
+- (BOOL) isLogin
+{
+    return isLogin;
+}
+
+- (void)signup:(NSString *) userid password:(NSString *) password
+{
+    
+}
+
+
+- (void) logout
+{
+    
 }
 
 @end

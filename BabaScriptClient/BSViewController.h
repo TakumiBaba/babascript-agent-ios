@@ -7,8 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Parse/Parse.h>
+#import "BSAppDelegate.h"
 
 @interface BSViewController : UIViewController
+{
+    BSAppDelegate *appDelegate;
+    __weak IBOutlet UIView *containerView;
+    
+    __weak IBOutlet UIViewController *booleanViewController;
+    __weak IBOutlet UIViewController *stringViewController;
+    __weak IBOutlet UIViewController *intViewController;
+    __weak IBOutlet UIViewController *listViewController;
+}
 
 @end

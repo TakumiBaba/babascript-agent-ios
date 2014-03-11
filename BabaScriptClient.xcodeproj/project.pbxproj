@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		46525DE3B9FA46F98E3244FC /* libPods-BabaScriptClientTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54861BFF23914427A20C574D /* libPods-BabaScriptClientTests.a */; };
 		9172B0F7CDFC407A8F106EFB /* libPods-BabaScriptClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C8D5CBA6CD04306A89648E2 /* libPods-BabaScriptClient.a */; };
+		E108A6F918BA5F0C008552D9 /* BSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E108A6F818BA5F0C008552D9 /* BSLoginViewController.m */; };
+		E108A6FB18BA62C3008552D9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E108A6FA18BA62C3008552D9 /* Security.framework */; };
 		E199632A189FDD530006E120 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1996329189FDD530006E120 /* Foundation.framework */; };
 		E199632C189FDD530006E120 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E199632B189FDD530006E120 /* CoreGraphics.framework */; };
 		E199632E189FDD530006E120 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E199632D189FDD530006E120 /* UIKit.framework */; };
@@ -24,6 +26,7 @@
 		E199634E189FDD530006E120 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E199632D189FDD530006E120 /* UIKit.framework */; };
 		E1996356189FDD530006E120 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E1996354189FDD530006E120 /* InfoPlist.strings */; };
 		E1996358189FDD530006E120 /* BabaScriptClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E1996357189FDD530006E120 /* BabaScriptClientTests.m */; };
+		E1CC7ECC18BBB39D00CB0C2D /* BSBooleanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E1CC7ECB18BBB39D00CB0C2D /* BSBooleanViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +44,9 @@
 		74B91FA5FFB344968C8D06DF /* Pods-BabaScriptClient.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabaScriptClient.xcconfig"; path = "Pods/Pods-BabaScriptClient.xcconfig"; sourceTree = "<group>"; };
 		78D8D39F51EE4D62881763EF /* Pods-BabaScriptClientTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BabaScriptClientTests.xcconfig"; path = "Pods/Pods-BabaScriptClientTests.xcconfig"; sourceTree = "<group>"; };
 		7C8D5CBA6CD04306A89648E2 /* libPods-BabaScriptClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BabaScriptClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E108A6F718BA5F0C008552D9 /* BSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSLoginViewController.h; sourceTree = "<group>"; };
+		E108A6F818BA5F0C008552D9 /* BSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSLoginViewController.m; sourceTree = "<group>"; };
+		E108A6FA18BA62C3008552D9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		E1996326189FDD530006E120 /* BabaScriptClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabaScriptClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1996329189FDD530006E120 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E199632B189FDD530006E120 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -62,6 +68,8 @@
 		E1996355189FDD530006E120 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E1996357189FDD530006E120 /* BabaScriptClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BabaScriptClientTests.m; sourceTree = "<group>"; };
 		E199636118A00A660006E120 /* BabaScriptClient.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BabaScriptClient.entitlements; sourceTree = "<group>"; };
+		E1CC7ECA18BBB39D00CB0C2D /* BSBooleanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBooleanViewController.h; sourceTree = "<group>"; };
+		E1CC7ECB18BBB39D00CB0C2D /* BSBooleanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSBooleanViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E108A6FB18BA62C3008552D9 /* Security.framework in Frameworks */,
 				E199632C189FDD530006E120 /* CoreGraphics.framework in Frameworks */,
 				E199632E189FDD530006E120 /* UIKit.framework in Frameworks */,
 				E199632A189FDD530006E120 /* Foundation.framework in Frameworks */,
@@ -114,6 +123,7 @@
 		E1996328189FDD530006E120 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E108A6FA18BA62C3008552D9 /* Security.framework */,
 				E1996329189FDD530006E120 /* Foundation.framework */,
 				E199632B189FDD530006E120 /* CoreGraphics.framework */,
 				E199632D189FDD530006E120 /* UIKit.framework */,
@@ -127,6 +137,7 @@
 		E199632F189FDD530006E120 /* BabaScriptClient */ = {
 			isa = PBXGroup;
 			children = (
+				E1CC7EC918BBB38400CB0C2D /* ReturnValueViews */,
 				E199636118A00A660006E120 /* BabaScriptClient.entitlements */,
 				E1996338189FDD530006E120 /* BSAppDelegate.h */,
 				E1996339189FDD530006E120 /* BSAppDelegate.m */,
@@ -136,6 +147,8 @@
 				E1996342189FDD530006E120 /* BSViewController.m */,
 				E1996344189FDD530006E120 /* Images.xcassets */,
 				E1996330189FDD530006E120 /* Supporting Files */,
+				E108A6F718BA5F0C008552D9 /* BSLoginViewController.h */,
+				E108A6F818BA5F0C008552D9 /* BSLoginViewController.m */,
 			);
 			path = BabaScriptClient;
 			sourceTree = "<group>";
@@ -167,6 +180,15 @@
 				E1996354189FDD530006E120 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E1CC7EC918BBB38400CB0C2D /* ReturnValueViews */ = {
+			isa = PBXGroup;
+			children = (
+				E1CC7ECA18BBB39D00CB0C2D /* BSBooleanViewController.h */,
+				E1CC7ECB18BBB39D00CB0C2D /* BSBooleanViewController.m */,
+			);
+			name = ReturnValueViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,6 +371,8 @@
 				E1996343189FDD530006E120 /* BSViewController.m in Sources */,
 				E1996336189FDD530006E120 /* main.m in Sources */,
 				E199633A189FDD530006E120 /* BSAppDelegate.m in Sources */,
+				E1CC7ECC18BBB39D00CB0C2D /* BSBooleanViewController.m in Sources */,
+				E108A6F918BA5F0C008552D9 /* BSLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,13 +510,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: org.babascript.ios.BabaScriptClient";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BabaScriptClient/BabaScriptClient-Prefix.pch";
 				INFOPLIST_FILE = "BabaScriptClient/BabaScriptClient-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "62D70A3F-64A1-46C1-8632-D2894FC2D9FC";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -503,13 +527,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: org.babascript.ios.BabaScriptClient";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BabaScriptClient/BabaScriptClient-Prefix.pch";
 				INFOPLIST_FILE = "BabaScriptClient/BabaScriptClient-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "62D70A3F-64A1-46C1-8632-D2894FC2D9FC";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
