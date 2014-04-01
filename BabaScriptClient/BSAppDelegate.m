@@ -17,16 +17,17 @@
     // Override point for customization after application launch.
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert];
     
-    LUKeychainAccess *access = [LUKeychainAccess standardKeychainAccess];
-    NSString *userid = [access stringForKey:@"id"];
-    NSString *password = [access stringForKey:@"password"];
-    if(![userid isEqualToString:@""] || ![password isEqualToString:@""]){
-        isLogin = NO;
-        return YES;
-    }else{
-        [self login:userid password:password callback:^(NSDictionary *data) {
-        }];
-    }
+//    LUKeychainAccess *access = [LUKeychainAccess standardKeychainAccess];
+//    NSString *userid = [access stringForKey:@"id"];
+//    NSString *password = [access stringForKey:@"password"];
+//    if(![userid isEqualToString:@""] || ![password isEqualToString:@""]){
+//        isLogin = NO;
+//        return YES;
+//    }else{
+//        [self login:userid password:password callback:^(NSDictionary *data) {
+//        }];
+//    }
+    isActive = true;
     return YES;
 }
 							
@@ -40,6 +41,8 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    isActive = false;
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -74,17 +77,18 @@
 
 -(void) application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
-    NSDictionary *aps = [userInfo objectForKey:@"aps"];
-    NSString *message = [aps objectForKey:@"alert"];
-//    NSString *trimedMessage = [message stringByReplacingOccurrencesOfString:@"\n" withString:@""];
-//    NSLog(@"message is %@", trimedMessage);
-    NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
-    NSError *error = nil;
-    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
-    if(error != nil){
-        NSLog(@"error ? %@", error);
-    }
-    NSLog(@"%@", json);
+    
+//    NSDictionary *aps = [userInfo objectForKey:@"aps"];
+//    NSLog(@"aps ? %@", aps);
+//    NSString *message = [aps objectForKey:@"alert"];
+//    NSData *data = [message dataUsingEncoding:NSUTF8StringEncoding];
+//    NSError *error = nil;
+//    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
+//    if(error != nil){
+//        NSLog(@"error ? %@", error);
+//    }
+//    [[NSNotificationCenter defaultCenter] postNotificationName:@"task" object:self userInfo: message];
+//    NSLog(@"%@", json);
 //    NSLog(@"%@", [[NSString alloc] initWithData:userInfo encoding:NSUTF8StringEncoding]);
     
 }

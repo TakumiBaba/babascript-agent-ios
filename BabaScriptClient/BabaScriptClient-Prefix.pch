@@ -10,7 +10,8 @@
 #warning "This project uses features only available in iOS SDK 5.0 and later."
 #endif
 
-    #define kAPI @"http://172.16.128.75:3000/api"
+    #define kAPI @"http://192.168.43.16:3000/api"
+    #define kServerAddress @"http://192.168.43.16:8000/client"
 
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>

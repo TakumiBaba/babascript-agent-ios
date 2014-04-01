@@ -11,6 +11,7 @@
 @interface BSAppDelegate : UIResponder <UIApplicationDelegate>
 {
     BOOL isLogin;
+    BOOL isActive;
 }
 
 @property (strong, nonatomic) UIWindow *window;
